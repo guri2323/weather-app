@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import "./Weather.css";
 import { fetchWeatherData } from "../../utils/fetchWeatherData";
+import Loader from "../Loader/Loader";
 
 const Weather = () => {
   const [search, setSearch] = useState("");
@@ -26,14 +27,14 @@ const Weather = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <SearchBox
         search={search}
         setSearch={setSearch}
         handleSearch={handleSearch}
       />
       {loading ? (
-        <div className="loading">Loading...</div>
+        <Loader />
       ) : (
         <div>
           <div className="city-name">
@@ -66,7 +67,7 @@ const Weather = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
