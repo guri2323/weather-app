@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
-import "./Weather.css";
-import { fetchWeatherData } from "../../utils/fetchWeatherData";
 import Loader from "../Loader/Loader";
+import { fetchWeatherData, getCurrentDate } from "../../utils";
+import "./Weather.css";
 
 const Weather = () => {
   const [search, setSearch] = useState("");
@@ -11,15 +11,6 @@ const Weather = () => {
 
   async function handleSearch() {
     fetchWeatherData(search, setWeatherData, setLoading);
-  }
-
-  function getCurrentDate() {
-    return new Date().toLocaleDateString("en-us", {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    });
   }
 
   useEffect(() => {
