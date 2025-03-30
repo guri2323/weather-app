@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import Loader from "../Loader/Loader";
 import CityName from "./CityName/CityName";
@@ -6,19 +6,24 @@ import CurrentDate from "../CurrentDate/CurrentDate";
 import WeatherInfo from "./WeatherInfo/WeatherInfo";
 import { fetchWeatherData } from "../../utils";
 import "./Weather.css";
+import WeatherDescription from "./WeatherDescription/WeatherDescription";
+import Temperature from "./Temperature/Temperature";
 
 const Weather = () => {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [weatherData, setWeatherData] = useState<Record<any, any>>();
 
-  async function handleSearch() {
+  const handleSearch = useCallback(async () => {
+    console.log("search", search);
     fetchWeatherData(search, setWeatherData, setLoading);
-  }
+  }, [search]);
 
   useEffect(() => {
     fetchWeatherData("Toronto", setWeatherData, setLoading);
   }, []);
+
+  console.log("weatherData", weatherData);
 
   return (
     <>
@@ -33,12 +38,8 @@ const Weather = () => {
         <div>
           <CityName weatherData={weatherData} />
           <CurrentDate />
-          <div className="temp">{weatherData?.main?.temp}</div>
-          <p className="description">
-            {weatherData && weatherData.weather && weatherData.weather[0]
-              ? weatherData.weather[0].description
-              : ""}
-          </p>
+          <Temperature weatherData={weatherData} />
+          <WeatherDescription weatherData={weatherData} />
           <WeatherInfo weatherData={weatherData} />
         </div>
       )}
