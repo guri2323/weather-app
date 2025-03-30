@@ -5,9 +5,9 @@ import CityName from "./CityName/CityName";
 import CurrentDate from "../CurrentDate/CurrentDate";
 import WeatherInfo from "./WeatherInfo/WeatherInfo";
 import { fetchWeatherData } from "../../utils";
-import "./Weather.css";
 import WeatherDescription from "./WeatherDescription/WeatherDescription";
 import Temperature from "./Temperature/Temperature";
+import "./Weather.css";
 
 const Weather = () => {
   const [search, setSearch] = useState("");
