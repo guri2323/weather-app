@@ -10,14 +10,14 @@ import Temperature from "./Temperature/Temperature";
 import "./Weather.css";
 
 const Weather = () => {
-  const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [weatherData, setWeatherData] = useState<Record<any, any>>();
 
-  const handleSearch = useCallback(async () => {
-    console.log("search", search);
-    fetchWeatherData(search, setWeatherData, setLoading);
-  }, [search]);
+  const handleSearch = useCallback(
+    async () => fetchWeatherData(search, setWeatherData, setLoading),
+    [search]
+  );
 
   useEffect(() => {
     fetchWeatherData("Toronto", setWeatherData, setLoading);
