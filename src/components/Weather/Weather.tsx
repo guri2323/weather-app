@@ -3,9 +3,8 @@ import SearchBox from "../SearchBox/SearchBox";
 import Loader from "../Loader/Loader";
 import CityName from "./CityName/CityName";
 import CurrentDate from "../CurrentDate/CurrentDate";
-import WindSpeed from "./WindSpeed/WindSpeed";
-import Humidity from "./Humidity/Humidity";
-import { fetchWeatherData, getCurrentDate } from "../../utils";
+import WeatherInfo from "./WeatherInfo/WeatherInfo";
+import { fetchWeatherData } from "../../utils";
 import "./Weather.css";
 
 const Weather = () => {
@@ -40,14 +39,7 @@ const Weather = () => {
               ? weatherData.weather[0].description
               : ""}
           </p>
-          <div className="weather-info">
-            <div className="column">
-              <WindSpeed weatherData={weatherData} />
-            </div>
-            <div className="column">
-              <Humidity weatherData={weatherData} />
-            </div>
-          </div>
+          <WeatherInfo weatherData={weatherData} />
         </div>
       )}
     </>
