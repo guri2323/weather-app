@@ -23,8 +23,6 @@ const Weather = () => {
     fetchWeatherData("Toronto", setWeatherData, setLoading);
   }, []);
 
-  console.log("weatherData", weatherData);
-
   return (
     <>
       <SearchBox
