@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import Loader from "../Loader/Loader";
+import CityName from "./CityName/CityName";
+import CurrentDate from "../CurrentDate/CurrentDate";
+import WindSpeed from "./WindSpeed/WindSpeed";
+import Humidity from "./Humidity/Humidity";
 import { fetchWeatherData, getCurrentDate } from "../../utils";
 import "./Weather.css";
 
@@ -28,14 +32,8 @@ const Weather = () => {
         <Loader />
       ) : (
         <div>
-          <div className="city-name">
-            <h2>
-              {weatherData?.name}, <span>{weatherData?.sys?.country}</span>
-            </h2>
-          </div>
-          <div className="date">
-            <span>{getCurrentDate()}</span>
-          </div>
+          <CityName weatherData={weatherData} />
+          <CurrentDate />
           <div className="temp">{weatherData?.main?.temp}</div>
           <p className="description">
             {weatherData && weatherData.weather && weatherData.weather[0]
@@ -44,16 +42,10 @@ const Weather = () => {
           </p>
           <div className="weather-info">
             <div className="column">
-              <div>
-                <p className="wind">{weatherData?.wind?.speed}</p>
-                <p>Wind Speed</p>
-              </div>
+              <WindSpeed weatherData={weatherData} />
             </div>
             <div className="column">
-              <div>
-                <p className="humidity">{weatherData?.main?.humidity}%</p>
-                <p>Humidity</p>
-              </div>
+              <Humidity weatherData={weatherData} />
             </div>
           </div>
         </div>
