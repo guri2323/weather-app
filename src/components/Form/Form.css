@@ -1,0 +1,13 @@
+.form-input {
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 5px 0;
+}
+
+.input-container {
+  display: flex;
+}
+
+.form-label {
+  margin-right: 10px;
+}
