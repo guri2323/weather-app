@@ -1,14 +1,11 @@
-import "./App.css";
-import Form from "./components/Form/Form";
 import Weather from "./components/Weather/Weather";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { routes } from "./routes-config";
+
+const router = createBrowserRouter(routes);
 
 function App() {
-  return (
-    <div className="App">
-      {/* <Weather /> */}
-      <Form />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

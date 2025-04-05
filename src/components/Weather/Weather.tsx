@@ -24,7 +24,7 @@ const Weather = () => {
   }, []);
 
   return (
-    <>
+    <div className="container">
       <SearchBox
         search={search}
         setSearch={setSearch}
@@ -41,7 +41,7 @@ const Weather = () => {
           <WeatherInfo weatherData={weatherData} />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
