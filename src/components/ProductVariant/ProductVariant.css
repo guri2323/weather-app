@@ -1,0 +1,25 @@
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 25px;
+  background: #fff;
+  color: indianred;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+  background: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-button::before {
+  content: "← ";
+  font-weight: bold;
+}

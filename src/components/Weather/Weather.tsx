@@ -8,11 +8,13 @@ import { fetchWeatherData } from "../../utils";
 import WeatherDescription from "./WeatherDescription/WeatherDescription";
 import Temperature from "./Temperature/Temperature";
 import "./Weather.css";
+import { useNavigate } from "react-router-dom";
 
 const Weather = () => {
   const [search, setSearch] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [weatherData, setWeatherData] = useState<Record<any, any>>();
+  const navigate = useNavigate();
 
   const handleSearch = useCallback(
     async () => fetchWeatherData(search, setWeatherData, setLoading),
@@ -41,6 +43,9 @@ const Weather = () => {
           <WeatherInfo weatherData={weatherData} />
         </div>
       )}
+      <button className="back-button" onClick={() => navigate("/products")}>
+        Back to Products
+      </button>
     </div>
   );
 };
