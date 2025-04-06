@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkweather_app=self.webpackChunkweather_app||[]).push([[810],{810:(e,r,a)=>{a.r(r),a.d(r,{default:()=>s});var t=a(662),n=a(579);function s(){const{id:e}=(0,t.g)();return(0,n.jsx)("div",{children:(0,n.jsxs)("h2",{children:["Product Variant Page for ID: ",e]})})}}}]);
-//# sourceMappingURL=810.6182865e.chunk.js.map

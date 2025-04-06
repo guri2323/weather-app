@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkweather_app=self.webpackChunkweather_app||[]).push([[538],{538:(t,e,a)=>{a.r(e),a.d(e,{default:()=>s});var c=a(662),r=a(579);function s(){const{id:t}=(0,c.g)(),e=(0,c.Zp)();return(0,r.jsxs)("div",{children:[(0,r.jsxs)("h2",{children:["Product Variant Page for ID: ",t]}),(0,r.jsx)("button",{className:"back-button",onClick:()=>e("/products"),children:"Back to Products"})]})}}}]);
+//# sourceMappingURL=538.8fa954ba.chunk.js.map
