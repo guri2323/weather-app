@@ -27,7 +27,6 @@ const Form = () => {
         <label className="form-label">User Name:</label>
         <input
           className="form-input"
-          defaultValue="test"
           {...register("userName", { required: true })}
         />
       </div>
