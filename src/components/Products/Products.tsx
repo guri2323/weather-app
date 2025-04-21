@@ -1,10 +1,17 @@
 import "./Products.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Products() {
+  const navigate = useNavigate();
   return (
     <div className="products">
-      <h1>Products</h1>
+      <div className="header-container ">
+        <h1>Products</h1>
+        <button className="signOutButton" onClick={() => navigate("/")}>
+          SignOut
+        </button>
+      </div>
       <div className="product-list">
         {/* Product 1 */}
         <Link to="/products/weather" className="product-link">

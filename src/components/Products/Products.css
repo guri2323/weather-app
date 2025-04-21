@@ -77,6 +77,26 @@
   line-height: 1.6;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2rem;
+}
+
+.signOutButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.signOutButton:hover {
+  background-color: #c0392b;
+}
+
 /* Responsive Adjustments - unchanged */
 @media (max-width: 768px) {
   .product-list {

@@ -6,8 +6,10 @@ import { routes } from "./routes-config";
 //   basename: "/weather-app",
 // });
 
+const router = createBrowserRouter(routes);
+
 function App() {
-  return <RouterProvider />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
